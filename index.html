@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Japan Planner</title>
+  <meta name="theme-color" content="#2b38f0" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-route="home" aria-label="回到首頁">
+        <span class="brand-mark">旅</span>
+        <span>
+          <strong>Japan Planner</strong>
+          <em>24/7 → 2/8</em>
+        </span>
+      </button>
+      <button class="icon-btn" id="settingsBtn" aria-label="設定">⚙️</button>
+    </header>
+
+    <nav class="bottom-nav" aria-label="主要分頁">
+      <button data-route="home" class="nav-item active"><span>🏠</span><b>首頁</b></button>
+      <button data-route="itinerary" class="nav-item"><span>🗓️</span><b>行程</b></button>
+      <button data-route="stays" class="nav-item"><span>🏨</span><b>住宿</b></button>
+    </nav>
+
+    <main id="app" class="page"></main>
+  </div>
+
+  <dialog id="settingsDialog" class="modal">
+    <form method="dialog" class="modal-card">
+      <div class="modal-head">
+        <h2>網站設定</h2>
+        <button class="ghost-btn" value="cancel">✕</button>
+      </div>
+      <label>
+        你的代號
+        <select id="personSelect">
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+        </select>
+      </label>
+
+      <button id="saveSettings" class="primary-btn" value="default">儲存設定</button>
+    </form>
+  </dialog>
+
+  <template id="toastTemplate">
+    <div class="toast"></div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
